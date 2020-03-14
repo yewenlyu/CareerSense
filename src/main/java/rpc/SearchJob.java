@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import external.GitHubClient;
+
 /**
  * Servlet implementation class SearchJob
  */
@@ -31,11 +33,11 @@ public class SearchJob extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		JSONArray array = new JSONArray();
-		array.put(new JSONObject().put("username", "abcd"));
-		array.put(new JSONObject().put("username", "1234"));
+		double lat = Double.parseDouble(request.getParameter("lat"));
+		double lon = Double.parseDouble(request.getParameter("lon"));
 
-		RPCHelper.writeJsonArray(response, array);
+		GitHubClient client = new GitHubClient();
+		RPCHelper.writeJsonArray(response, client.search(lat, lon, null));
 	}
 
 	/**
