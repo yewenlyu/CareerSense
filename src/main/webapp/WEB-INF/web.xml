@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>SearchJob</servlet-name>
+  	<display-name>SearchJob</display-name>
+  	<description></description>
+  	<servlet-class>rpc.SearchJob</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RecommendJob</servlet-name>
+  	<display-name>RecommendJob</display-name>
+  	<description></description>
+  	<servlet-class>rpc.RecommendJob</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SearchJob</servlet-name>
+  	<url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecommendJob</servlet-name>
+  	<url-pattern>/recommendation</url-pattern>
+  </servlet-mapping>
 </web-app>
