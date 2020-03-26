@@ -1,7 +1,6 @@
 package rpc;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.Set;
 
@@ -66,5 +65,4 @@ public class SearchJob extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
